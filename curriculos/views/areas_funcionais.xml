@@ -1,0 +1,81 @@
+<odoo>
+  <data>
+   
+  <!-- Action to open Áreas Funcionais list -->
+  <act_window id="action_curriculos_areas_funcionais"
+    name="Areas Funcionais"
+    res_model="curriculos.areas_funcionais"
+    view_mode="tree,form"
+  />
+
+  <!-- Menu item to open Áreas Funcionais list -->
+  <menuitem id="menu_curriculos_areas_funcionais"
+    name="Areas Funcionais"
+    parent="menu_curriculos_configuracoes"
+    action="action_curriculos_areas_funcionais"
+    groups="curriculos_user"
+  />
+
+  <!-- Search for Areas Funcionais -->
+  <record id="search_curriculos_areas_funcionais" model="ir.ui.view">
+    <field name="name">Areas Funcionais Search</field>
+    <field name="model">curriculos.areas_funcionais</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="name"/>
+        <field name="cargos_ids"/>
+      </search>
+    </field>
+  </record>
+
+  <!-- Tree View for Áreas Funcionais -->
+  <record id="view_tree_curriculos_areas_funcionais" model="ir.ui.view">
+    <field name="name">Areas Funcionais Tree View</field>
+    <field name="model">curriculos.areas_funcionais</field>
+    <field name="arch" type="xml">
+      <tree string="Áreas Funcionais">
+        <field name="name"/>
+        <field name="description"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Form View for Áreas Funcionais -->
+  <record id="view_form_curriculos_areas_funcionais" model="ir.ui.view">
+    <field name="name">Areas Funcionais Form View</field>
+    <field name="model">curriculos.areas_funcionais</field>
+    <field name="arch" type="xml">
+      <form string="Áreas Funcionais">
+        <header>
+          <!-- To add buttons and status widget -->
+        </header>
+        <sheet>
+          <!-- To add form content -->
+          <group name="group_description">
+            <field name="name"/>
+            <field name="description"/>
+          </group>
+          <group name="group_lists">
+            <notebook>
+              <page string="Cargos" name="Cargos">
+                <field name="cargos_ids" nolabel="1" context="{'area_funcional': active_id}">
+                  <tree string="Cargos" editable="bottom">
+                    <field name="name" required="1"/>
+                  </tree>
+                </field>
+              </page>
+              <page string="Currículos" name="Curriculos">
+                <field name="curriculos_ids" nolabel="1" readonly="1"/>
+              </page>
+              <page string="Processos" name="Processos">
+                <field name="processos_ids" nolabel="1" readonly="1"/>
+              </page>
+            </notebook>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  </data>
+</odoo>

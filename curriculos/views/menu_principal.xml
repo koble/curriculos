@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<odoo>
+  <data>
+
+    <!-- Parent Orchestration Menu -->
+    <menuitem id="menu_curriculos"
+      name="Currículos" 
+      groups="curriculos_user"
+    />
+
+    <menuitem id="menu_curriculos_cadastros"
+      name="Cadastros"
+      parent="menu_curriculos"
+      groups="curriculos_user"
+    />
+
+    <menuitem id="menu_curriculos_configuracoes"
+      name="Configurações"
+      parent="menu_curriculos"
+      groups="curriculos_user"
+    />
+
+  </data>
+</odoo>

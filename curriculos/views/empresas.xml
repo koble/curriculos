@@ -1,0 +1,50 @@
+<odoo>
+  <data>
+   
+  <!-- Action to open Empresas list -->
+  <act_window id="action_curriculos_empresas"
+    name="Empresas"
+    res_model="curriculos.empresas"
+    view_mode="tree,form" 
+  />
+
+  <!-- Menu item to open Empresas list -->
+  <menuitem id="menu_curriculos_empresas"
+    name="Empresas"
+    parent="menu_curriculos_configuracoes"
+    action="action_curriculos_empresas" 
+    groups="curriculos_user"
+  />
+
+  <!-- Tree View for Empresas -->
+  <record id="view_tree_curriculos_empresas" model="ir.ui.view">
+    <field name="name">Línguas Tree View</field>
+    <field name="model">curriculos.empresas</field>
+    <field name="arch" type="xml">
+      <tree string="Empresas">
+        <field name="name"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Form View for Empresas -->
+  <record id="view_form_curriculos_empresas" model="ir.ui.view">
+    <field name="name">Línguas Form View</field>
+    <field name="model">curriculos.empresas</field>
+    <field name="arch" type="xml">
+      <form string="Empresas">
+        <header>
+          <!-- To add buttons and status widget -->
+        </header>
+        <sheet>
+          <!-- To add form content -->
+          <group name="group_description">
+            <field name="name" required="1"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  </data>
+</odoo>

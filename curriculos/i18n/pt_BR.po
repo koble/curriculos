@@ -1,0 +1,501 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* curriculos
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-05 14:07+0000\n"
+"PO-Revision-Date: 2017-03-05 14:07+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: curriculos
+#: sql_constraint:curriculos.empresas:0
+msgid "A Empresa não pode ser repetida!"
+msgstr "A Empresa não pode ser repetida!"
+
+#. module: curriculos
+#: sql_constraint:curriculos.profissoes:0
+msgid "A Profissão não pode ser repetida!"
+msgstr "A Profissão não pode ser repetida!"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_analise
+msgid "Analise"
+msgstr "Analise"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_attachment_ids
+msgid "Anexo"
+msgstr "Anexo"
+
+#. module: curriculos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_curriculos
+msgid "Anexos"
+msgstr "Anexos"
+
+#. module: curriculos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_curriculos
+msgid "Análise"
+msgstr "Análise"
+
+#. module: curriculos
+#: model:ir.actions.act_window,name:curriculos.action_curriculos_areas_funcionais
+#: model:ir.model,name:curriculos.model_curriculos_areas_funcionais
+#: model:ir.ui.menu,name:curriculos.menu_curriculos_areas_funcionais
+msgid "Areas Funcionais"
+msgstr "Areas Funcionais"
+
+#. module: curriculos
+#: selection:curriculos.linguas_curriculos_rel,proficiencia:0
+msgid "Avançado"
+msgstr "Avançado"
+
+#. module: curriculos
+#: selection:curriculos.linguas_curriculos_rel,proficiencia:0
+msgid "Básico"
+msgstr "Básico"
+
+#. module: curriculos
+#: model:ir.ui.menu,name:curriculos.menu_curriculos_cadastros
+msgid "Cadastros"
+msgstr "Cadastros"
+
+#. module: curriculos
+#: selection:curriculos.processos,state:0
+msgid "Cancelado"
+msgstr "Cancelado"
+
+#. module: curriculos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_processos
+msgid "Cancelar"
+msgstr "Cancelar"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_cargos_name
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_experiencias_cargos_id
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_cargos_id
+msgid "Cargo"
+msgstr "Cargo"
+
+#. module: curriculos
+#: model:ir.actions.act_window,name:curriculos.action_curriculos_cargos
+#: model:ir.model,name:curriculos.model_curriculos_cargos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_areas_funcionais_cargos_ids
+#: model:ir.ui.menu,name:curriculos.menu_curriculos_cargos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_areas_funcionais
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_cargos
+#: model:ir.ui.view,arch_db:curriculos.view_tree_curriculos_cargos
+msgid "Cargos"
+msgstr "Cargos"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_celular
+msgid "Celular"
+msgstr "Celular"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_cliente_id
+msgid "Cliente"
+msgstr "Cliente"
+
+#. module: curriculos
+#: model:ir.actions.act_window,name:curriculos.action_curriculos_clientes
+#: model:ir.ui.menu,name:curriculos.menu_curriculos_clientes
+#: model:ir.ui.view,arch_db:curriculos.view_tree_curriculos_clientes
+msgid "Clientes"
+msgstr "Clientes"
+
+#. module: curriculos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_processos
+msgid "Concluir"
+msgstr "Concluir"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_data_fim
+msgid "Conclusão"
+msgstr "Conclusão"
+
+#. module: curriculos
+#: selection:curriculos.processos,state:0
+msgid "Concluído"
+msgstr "Concluído"
+
+#. module: curriculos
+#: model:ir.ui.menu,name:curriculos.menu_curriculos_configuracoes
+msgid "Configurações"
+msgstr "Configurações"
+
+#. module: curriculos
+#: model:ir.ui.view,arch_db:curriculos.search_curriculos_curriculos
+msgid "Conteúdo Indexado"
+msgstr "Conteúdo Indexado"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_areas_funcionais_create_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_cargos_create_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_create_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_empresas_create_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_experiencias_create_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_create_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_curriculos_rel_create_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_create_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_profissoes_create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_areas_funcionais_create_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_cargos_create_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_create_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_empresas_create_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_experiencias_create_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_create_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_curriculos_rel_create_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_create_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_profissoes_create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_areas_funcionais_curriculos_ids
+msgid "Curriculos"
+msgstr "Curriculos"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_experiencias_curriculos_ids
+msgid "Curriculos ids"
+msgstr "Curriculos ids"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_curriculos_linguas_rel_ids
+msgid "Curriculos linguas rel ids"
+msgstr "Curriculos linguas rel ids"
+
+#. module: curriculos
+#: model:ir.actions.act_window,name:curriculos.action_curriculos_curriculos
+#: model:ir.model,name:curriculos.model_curriculos_curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_curriculos_rel_curriculos_ids
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_curriculos_ids
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_profissoes_curriculos_ids
+#: model:ir.ui.menu,name:curriculos.menu_curriculos
+#: model:ir.ui.menu,name:curriculos.menu_curriculos_curriculos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_areas_funcionais
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_cargos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_curriculos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_linguas
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_processos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_profissoes
+#: model:ir.ui.view,arch_db:curriculos.view_tree_curriculos_curriculos
+msgid "Currículos"
+msgstr "Currículos"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_areas_funcionais_description
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_description
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_processos
+msgid "Descrição"
+msgstr "Descrição"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_areas_funcionais_display_name
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_cargos_display_name
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_display_name
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_empresas_display_name
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_experiencias_display_name
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_curriculos_rel_display_name
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_display_name
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_display_name
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_profissoes_display_name
+msgid "Display Name"
+msgstr "Nome para Exibição"
+
+#. module: curriculos
+#: selection:curriculos.processos,state:0
+#: model:ir.ui.view,arch_db:curriculos.view_search_curriculos_processos
+msgid "Em Progresso"
+msgstr "Em Progresso"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_email
+msgid "Email"
+msgstr "E-mail"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_empresas_name
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_experiencias_empresas_id
+msgid "Empresa"
+msgstr "Empresa"
+
+#. module: curriculos
+#: model:ir.actions.act_window,name:curriculos.action_curriculos_empresas
+#: model:ir.model,name:curriculos.model_curriculos_empresas
+#: model:ir.ui.menu,name:curriculos.menu_curriculos_empresas
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_empresas
+#: model:ir.ui.view,arch_db:curriculos.view_tree_curriculos_empresas
+msgid "Empresas"
+msgstr "Empresas"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_endereco
+msgid "Endereço"
+msgstr "Endereço"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_state
+msgid "Estágio"
+msgstr "Estágio"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_cargos_experiencias_ids
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_experiencias_ids
+msgid "Experiencias ids"
+msgstr "Experiencias ids"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_experiencias_experiencia
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_experiencias_name
+#: model:ir.ui.view,arch_db:curriculos.search_curriculos_curriculos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_experiencias
+msgid "Experiência"
+msgstr "Experiência"
+
+#. module: curriculos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_experiencias
+msgid "Experiências"
+msgstr "Experiências"
+
+#. module: curriculos
+#: model:ir.model,name:curriculos.model_curriculos_experiencias
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_curriculos
+msgid "Experiências Profissionais"
+msgstr "Experiências Profissionais"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_experiencias_fim
+msgid "Fim"
+msgstr "Fim"
+
+#. module: curriculos
+#: selection:curriculos.linguas_curriculos_rel,proficiencia:0
+msgid "Fluente"
+msgstr "Fluente"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_areas_funcionais_id
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_cargos_id
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_id
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_empresas_id
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_experiencias_id
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_curriculos_rel_id
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_id
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_id
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_profissoes_id
+msgid "ID"
+msgstr "ID"
+
+#. module: curriculos
+#: selection:curriculos.linguas_curriculos_rel,proficiencia:0
+msgid "Intermediário"
+msgstr "Intermediário"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_experiencias_inicio
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_data_inicio
+msgid "Início"
+msgstr "Início"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_areas_funcionais___last_update
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_cargos___last_update
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos___last_update
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_empresas___last_update
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_experiencias___last_update
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas___last_update
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_curriculos_rel___last_update
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos___last_update
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_profissoes___last_update
+msgid "Last Modified on"
+msgstr "Última Modificação em"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_areas_funcionais_write_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_cargos_write_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_write_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_empresas_write_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_experiencias_write_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_curriculos_rel_write_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_write_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_write_uid
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_profissoes_write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_areas_funcionais_write_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_cargos_write_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_write_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_empresas_write_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_experiencias_write_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_curriculos_rel_write_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_write_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_write_date
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_profissoes_write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: curriculos
+#: model:ir.ui.view,arch_db:curriculos.search_curriculos_curriculos
+msgid "Lingua"
+msgstr "Lingua"
+
+#. module: curriculos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_curriculos
+msgid "Linguas"
+msgstr "Linguas"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_linguas_curriculos_rel_ids
+msgid "Linguas curriculos rel ids"
+msgstr "Linguas curriculos rel ids"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_name
+msgid "Língua"
+msgstr "Língua"
+
+#. module: curriculos
+#: sql_constraint:curriculos.linguas_curriculos_rel:0
+msgid "Língua já cadastrada neste currículo !"
+msgstr "Língua já cadastrada neste currículo !"
+
+#. module: curriculos
+#: model:ir.actions.act_window,name:curriculos.action_curriculos_linguas
+#: model:ir.model,name:curriculos.model_curriculos_linguas
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_curriculos_rel_linguas_ids
+#: model:ir.ui.menu,name:curriculos.menu_curriculos_linguas
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_curriculos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_linguas
+#: model:ir.ui.view,arch_db:curriculos.view_tree_curriculos_linguas
+msgid "Línguas"
+msgstr "Línguas"
+
+#. module: curriculos
+#: model:ir.model,name:curriculos.model_curriculos_linguas_curriculos_rel
+msgid "Línguas e Currículos"
+msgstr "Línguas e Currículos"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_name
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_curriculos
+msgid "Nome"
+msgstr "Nome"
+
+#. module: curriculos
+#: code:addons/curriculos/models/processos.py:97
+#, python-format
+msgid "Não pode concluir um processo sem um currículo selecionado!"
+msgstr "Não pode concluir um processo sem um currículo selecionado!"
+
+#. module: curriculos
+#: sql_constraint:curriculos.cargos:0
+msgid "O Cargo não pode se repetir na mesma Área Funcional!"
+msgstr "O Cargo não pode se repetir na mesma Área Funcional!"
+
+#. module: curriculos
+#: model:ir.ui.view,arch_db:curriculos.view_search_curriculos_processos
+msgid "Por Cliente"
+msgstr "Por Cliente"
+
+#. module: curriculos
+#: model:ir.ui.view,arch_db:curriculos.search_curriculos_curriculos
+msgid "Por Profissão"
+msgstr "Por Profissão"
+
+#. module: curriculos
+#: model:ir.ui.view,arch_db:curriculos.search_curriculos_cargos
+msgid "Por Área Funcional"
+msgstr "Por Área Funcional"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_name
+msgid "Processo"
+msgstr "Processo"
+
+#. module: curriculos
+#: model:ir.actions.act_window,name:curriculos.action_curriculos_processos
+#: model:ir.model,name:curriculos.model_curriculos_processos
+#: model:ir.ui.menu,name:curriculos.menu_curriculos_Processos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_areas_funcionais
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_curriculos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_processos
+#: model:ir.ui.view,arch_db:curriculos.view_search_curriculos_processos
+#: model:ir.ui.view,arch_db:curriculos.view_tree_curriculos_processos
+msgid "Processos"
+msgstr "Processos"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_areas_funcionais_processos_ids
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_processos_ids
+msgid "Processos Seletivos"
+msgstr "Processos Seletivos"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_linguas_curriculos_rel_proficiencia
+msgid "Proficiência"
+msgstr "Proficiência"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_profissoes_id
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_profissoes_name
+msgid "Profissão"
+msgstr "Profissão"
+
+#. module: curriculos
+#: model:ir.actions.act_window,name:curriculos.action_curriculos_profissoes
+#: model:ir.model,name:curriculos.model_curriculos_profissoes
+#: model:ir.ui.menu,name:curriculos.menu_curriculos_profissoes
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_profissoes
+#: model:ir.ui.view,arch_db:curriculos.view_tree_curriculos_profissoes
+msgid "Profissões"
+msgstr "Profissões"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_count_curriculos
+msgid "Qtd"
+msgstr "Qtd"
+
+#. module: curriculos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_processos
+msgid "Reabrir"
+msgstr "Reabrir"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_selecionado_id
+msgid "Selecionado"
+msgstr "Selecionado"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_curriculos_telefone
+msgid "Telefone"
+msgstr "Telefone"
+
+#. module: curriculos
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_areas_funcionais_name
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_cargos_area_funcional_id
+#: model:ir.model.fields,field_description:curriculos.field_curriculos_processos_area_funcional_id
+msgid "Área Funcional"
+msgstr "Área Funcional"
+
+#. module: curriculos
+#: model:ir.ui.view,arch_db:curriculos.view_form_curriculos_areas_funcionais
+#: model:ir.ui.view,arch_db:curriculos.view_tree_curriculos_areas_funcionais
+msgid "Áreas Funcionais"
+msgstr "Áreas Funcionais"
+

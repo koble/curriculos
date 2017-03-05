@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+  
+  <record model="ir.module.category" id="model_curriculos">
+    <field name="name">Currículos</field>
+    <field name="sequence">0</field>
+    <field name="visible" eval="30"/>
+  </record>
+
+  <record model="res.groups" id="curriculos_user">
+    <field name="name">Usuário</field>
+    <field name="category_id"
+           ref="curriculos.model_curriculos"
+    />
+  </record>
+
+  </data>
+</odoo>

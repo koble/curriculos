@@ -1,0 +1,166 @@
+<odoo>
+  <data>
+   
+  <!-- Action to open Curriculos list -->
+  <act_window id="action_curriculos_curriculos"
+    name="Currículos"
+    res_model="curriculos.curriculos"
+    view_mode="tree,form" 
+  />
+
+  <!-- Menu item to open Curriculos list -->
+  <menuitem id="menu_curriculos_curriculos"
+    name="Currículos"
+    parent="menu_curriculos_cadastros"
+    action="action_curriculos_curriculos" 
+    groups="curriculos_user"
+  />
+
+  <!-- Search for Curriculos -->
+  <record id="search_curriculos_curriculos" model="ir.ui.view">
+    <field name="name">Currículos Search</field>
+    <field name="model">curriculos.curriculos</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="name"/>
+        <field name="email"/>
+        <field name="profissoes_id"/>
+        <field name="analise"/>
+        <field name="attachment_ids" 
+            filter_domain="[('attachment_ids.index_content','ilike',self)]" 
+            string="Conteúdo Indexado"
+        />
+        <field name="curriculos_linguas_rel_ids"
+            filter_domain="[(
+                             'curriculos_linguas_rel_ids.linguas_ids',
+                             'ilike',
+                             self
+                           )]"
+            string="Lingua"
+        />
+        <field name="experiencias_ids"
+            filter_domain="[ '|',
+                             (
+                              'experiencias_ids.experiencia',
+                              'ilike',
+                              self,
+                             ),
+                             (
+                              'experiencias_ids',
+                              'ilike',
+                              self
+                             ),
+                           ]"
+            string="Experiência"
+        />
+        <filter name="group_profissao" 
+            string="Por Profissão"
+            context="{'group_by': 'profissoes_id'}"
+        />
+      </search>
+    </field>
+  </record>
+
+
+  <!-- Tree View for Curriculos -->
+  <record id="view_tree_curriculos_curriculos" model="ir.ui.view">
+    <field name="name">Curriculos Tree View</field>
+    <field name="model">curriculos.curriculos</field>
+    <field name="arch" type="xml">
+      <tree string="Currículos">
+        <field name="name"/>
+        <field name="profissoes_id"/>
+        <field name="email"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Form View for Curriculos -->
+  <record id="view_form_curriculos_curriculos" model="ir.ui.view">
+    <field name="name">Curriculos Form View</field>
+    <field name="model">curriculos.curriculos</field>
+    <field name="arch" type="xml">
+      <form string="Currículos">
+        <header>
+          <!-- To add buttons and status widget -->
+        </header>
+        <sheet>
+          <!-- To add form content -->
+          <group name="group_title" col="1">
+            <h1><field name="name" required="1" placeholder="Nome"/></h1>
+          </group>
+          <group>
+            <group>
+              <field name="email" widget="email"/>
+              <field name="endereco"/>
+            </group>
+            <group>
+              <field name="telefone"/>
+              <field name="celular"/>
+            </group>
+          </group>
+          <group>
+            <field name="profissoes_id" 
+                   required="1"
+                   options="{
+                             'no_create': True,
+                             'no_open': True,
+                            }"
+            />
+          </group>
+          <group>
+            <separator string="Análise"/>
+            <field name="analise" nolabel="1" colspan="2"/>
+          </group>
+          <group name="group_lists">
+            <notebook>
+              <page string="Anexos" name="Anexos">
+                <field name="attachment_ids"
+                       required="1"
+                       widget="many2many_binary"
+                       nolabel="1"
+                />
+              </page>
+              <page string="Linguas" name="Linguas">
+                <field name="curriculos_linguas_rel_ids" nolabel="1">
+                  <tree string="Línguas" editable="bottom">
+                    <field name="linguas_ids"  
+                           required="1"
+                           options="{'no_create': True}"
+                    />
+                    <field name="proficiencia" 
+                           required="1"
+                    />
+                  </tree>
+                </field>
+              </page>
+              <page string="Experiências Profissionais" name="Experiencias Profissionais">
+                <field name="experiencias_ids" nolabel="1">
+                  <tree string="Experiências Profissionais">
+                    <field name="name"/>
+                    <field name="cargos_id"/>
+                  </tree>
+                </field>
+              </page>
+              <page string="Processos" name="Processos">
+                <field name="processos_ids" nolabel="1"
+                       options="{'no_create': True}"
+                />
+              </page>
+            </notebook>
+          </group>
+        </sheet>
+        <sheet position="after">
+          <div class="oe_chatter">
+            <field name="message_follower_ids"
+                   widget="mail_followers"
+            />
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  </data>
+</odoo>
