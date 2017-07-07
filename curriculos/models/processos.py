@@ -19,6 +19,12 @@ class processos(models.Model):
         default=date.today().strftime('%Y-%m-%d'),
      )
      data_fim          = fields.Date(string=u'Conclusão')
+     color             = fields.Integer(u'Cor')
+     priority          = fields.Selection(
+         [('0', 'Baixo'),
+          ('1', 'Normal'),
+          ('2', 'Alta')],
+        u'Prioridade', default='1')
      cliente_id        = fields.Many2one('res.partner',
         string=u'Cliente',
         auto_join=True,
