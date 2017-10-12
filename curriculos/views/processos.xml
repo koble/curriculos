@@ -1,211 +1,159 @@
 <odoo>
-  <data>
-   
-  <!-- Action to open Processos list -->
-  <act_window id="action_curriculos_processos"
-    name="Processos"
-    res_model="curriculos.processos"
-    view_mode="kanban,tree,form" 
-    context="{'search_default_filtro_em_progresso': 1}"
-  />
+    <data>
 
-  <!-- Menu item to open Processos list -->
-  <menuitem id="menu_curriculos_Processos"
-    name="Processos"
-    parent="menu_curriculos_cadastros"
-    action="action_curriculos_processos"
-    sequence="9"
-    groups="curriculos_user"
-  />
-
-  <!-- Search View for Processos -->
-  <record id="view_search_curriculos_processos" model="ir.ui.view">
-    <field name="name">Processos Search View</field>
-    <field name="model">curriculos.processos</field>
-    <field name="arch" type="xml">
-      <search string="Processos">
-        <field name="name"/>
-        <field name="description"/>
-        <field name="cliente_id"/>
-        <filter name="filtro_em_progresso"
-                string="Em Progresso"
-                domain="[('state','=','running')]"
+        <!-- Action to open Processos list -->
+        <act_window id="action_curriculos_processos"
+                    name="Processos"
+                    res_model="curriculos.processos"
+                    view_mode="kanban,tree,form"
+                    context="{'search_default_filtro_em_progresso': 1}"
         />
-        <filter name="group_by_cliente"
-                string="Por Cliente"
-                context="{'group_by': 'cliente_id'}"
+
+        <!-- Menu item to open Processos list -->
+        <menuitem id="menu_curriculos_Processos"
+                  name="Processos"
+                  parent="menu_curriculos_cadastros"
+                  action="action_curriculos_processos"
+                  sequence="9"
+                  groups="curriculos_user"
         />
-      </search>
-    </field>
-  </record> 
 
-  <!-- Kanban View for Processos -->
-  <record id="kanban_tree_curriculos_processos" model="ir.ui.view">
-    <field name="name">Processos Kanban View</field>
-    <field name="model">curriculos.processos"</field>
-    <field name="arch" type="xml">
-      <kanban 
-          default_group_by="state" 
-          default_order="data_inicio"
-          quick_create="false"
-      >
-        <field name="state" />
-        <field name="color" />
-        <field name="priority" />
-        <field name="description" />
-        <field name="cliente_id" />
-        <field name="area_funcional_id" />
-        <field name="cargos_id" />
-        <field name="data_inicio" />
-        <field name="data_fim" />
-        <field name="count_curriculos" />
-        <field name="selecionado_id" />
-        <templates>
-          <t t-name="kanban-box">
-            <div 
-                t-attf-class="#{kanban_color(record.color.raw_value)}
-                oe_kanban_global_click"
-            >
-              <div class="o_dropdown_kanban dropdown">
-              </div>
-              <div class="oe_kanban_content">
-                <div class="oe_kanban_footer">
-                  <div>
-                  </div>
-                  <div>
-                  </div>
-                </div>
-              </div>
-              <div class="oe_clear"/>
-            </div>
-          </t>
-        </templates>
-      </kanban>
-  </record>
+        <!-- Search View for Processos -->
+        <record id="view_search_curriculos_processos" model="ir.ui.view">
+            <field name="name">Processos Search View</field>
+            <field name="model">curriculos.processos</field>
+            <field name="arch" type="xml">
+                <search string="Processos">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="cliente_id"/>
+                    <filter name="filtro_em_progresso"
+                            string="Em Progresso"
+                            domain="[('state','=','running')]"
+                    />
+                    <filter name="group_by_cliente"
+                            string="Por Cliente"
+                            context="{'group_by': 'cliente_id'}"
+                    />
+                </search>
+            </field>
+        </record>
 
-  <!-- Tree View for Processos -->
-  <record id="view_tree_curriculos_processos" model="ir.ui.view">
-    <field name="name">Processos Tree View</field>
-    <field name="model">curriculos.processos</field>
-    <field name="arch" type="xml">
-      <tree string="Processos">
-        <field name="name"/>
-        <field name="cliente_id"/>
-        <field name="data_inicio"/>
-        <field name="data_fim"/>
-        <field name="count_curriculos"/>
-        <field name="state"/>
-      </tree>
-    </field>
-  </record>
+        <!-- Kanban View for Processos -->
+        <!--
+        <record id="kanban_tree_curriculos_processos" model="ir.ui.view">
+            <field name="name">Processos Kanban View</field>
+            <field name="model">curriculos.processos"</field>
+            <field name="arch" type="xml">
+            <kanban default_group_by="state" default_order="data_inicio" quick_create="false">
+                <field name="state" />
+                <field name="color" />
+                <field name="priority" />
+                <field name="description" />
+                <field name="cliente_id" />
+                <field name="area_funcional_id" />
+                <field name="cargos_id" />
+                <field name="data_inicio" />
+                <field name="data_fim" />
+                <field name="count_curriculos" />
+                <field name="selecionado_id" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                            <div class="o_dropdown_kanban dropdown"/>
+                            <div class="oe_kanban_content"/>
+                            <div class="oe_kanban_footer"/>
+                        </div>
+                        <div class="oe_clear"/>
+                    </t>
+                </templates>
+            </kanban>
+        </record>
+        -->
 
-  <!-- Form View for Processos -->
-  <record id="view_form_curriculos_processos" model="ir.ui.view">
-    <field name="name">Processos Form View</field>
-    <field name="model">curriculos.processos</field>
-    <field name="arch" type="xml">
-      <form string="Processos">
-        <header>
-          <button string="Concluir" 
-                  type="object" 
-                  name="concluir_processo" 
-                  attrs="{'invisible':[('state','!=','running')]}"  
-                  class="oe_highlight"
-          />
-          <button string="Cancelar"
-                  type="object"
-                  name="cancelar_processo"
-                  attrs="{'invisible':[('state','!=','running')]}"
-          />
-          <button string="Reabrir"  
-                  type="object" 
-                  name="reabrir_processo"  
-                  attrs="{'invisible':[('state','=','running')]}"
-          />
-          <field name="state" 
-                 widget="statusbar"
-                 statusbar_visible="running,done"
-          />
-        </header>
-        <sheet>
-          <!-- To add form content -->
-          <group name="group_description">
-            <h1><field name="name" 
-                       nolabel="1" 
-                       colspan="2"
-                       attrs="{'readonly':[('state','!=','running')]}"
-            /></h1>
-            <separator string="Descrição" colspan="2"/>
-            <field name="description" 
-                   nolabel="1"
-                   attrs="{'readonly':[('state','!=','running')]}"
-            />
-          </group>
-          <group>
-            <group>
-              <field name="cliente_id" 
-                     required="1"
-                     attrs="{'readonly':[('state','!=','running')]}"
-              />
-              <field name="area_funcional_id" 
-                     required="1"
-                     attrs="{'readonly':[('state','!=','running')]}"
-                     options="{
-                               'no_create': True,
-                               'no_open': True
-                              }"
-              />
-              <field name="cargos_id" 
-                     required="1"
-                     attrs="{'readonly':[('state','!=','running')]}"
-                     options="{
-                               'no_create': True,
-                               'no_open': True
-                              }"
-              />
-            </group>
-            <group>
-              <field name="data_inicio" 
-                     required="1"
-                     attrs="{'readonly':[('state','!=','running')]}"
-              />
-              <field name="data_fim"
-                     attrs="{'readonly':[('state','!=','running')]}"
-              />
-            </group>
-          </group>
-          <group>
-            <field name="selecionado_id"
-                   domain="[('id','in',curriculos_ids[0][2])]"
-                   attrs="{'readonly':[('state','!=','running')]}"
-                   options="{
-                             'no_create': True,
-                             'no_open': True,
-                            }"
-            />
-          </group>
-          <group name="group_lists">
-            <notebook>
-              <page string="Currículos" name="Currículos">
-                <field name="curriculos_ids" 
-                       nolabel="1"
-                       attrs="{'readonly':[('state','!=','running')]}"
-                />
-              </page>
-            </notebook>
-          </group>
-        </sheet>
-        <sheet position="after">
-          <div class="oe_chatter">
-            <field name="message_follower_ids"
-                   widget="mail_followers"
-            />
-            <field name="message_ids" widget="mail_thread"/>
-          </div>
-        </sheet>
-      </form>
-    </field>
-  </record>
+        <!-- Tree View for Processos -->
+        <record id="view_tree_curriculos_processos" model="ir.ui.view">
+            <field name="name">Processos Tree View</field>
+            <field name="model">curriculos.processos</field>
+            <field name="arch" type="xml">
+                <tree string="Processos">
+                    <field name="name"/>
+                    <field name="cliente_id"/>
+                    <field name="data_inicio"/>
+                    <field name="data_fim"/>
+                    <field name="count_curriculos"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
 
-  </data>
+        <!-- Form View for Processos -->
+        <record id="view_form_curriculos_processos" model="ir.ui.view">
+            <field name="name">Processos Form View</field>
+            <field name="model">curriculos.processos</field>
+            <field name="arch" type="xml">
+                <form string="Processos">
+                    <header>
+                        <button string="Concluir" type="object" name="concluir_processo" attrs="{'invisible':[('state','!=','running')]}" class="oe_highlight"/>
+                        <button string="Cancelar" type="object" name="cancelar_processo" attrs="{'invisible':[('state','!=','running')]}"/>
+                        <button string="Reabrir" type="object" name="reabrir_processo" attrs="{'invisible':[('state','=','running')]}"/>
+                        <field name="state" widget="statusbar" statusbar_visible="running,done"/>
+                    </header>
+                    <sheet>
+                        <!-- To add form content -->
+                        <group name="group_description">
+                            <h1>
+                                <field name="name" nolabel="1" colspan="2" attrs="{'readonly':[('state','!=','running')]}"/>
+                            </h1>
+                            <separator string="Descrição" colspan="2"/>
+                            <field name="description" nolabel="1" attrs="{'readonly':[('state','!=','running')]}"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="cliente_id" required="1" attrs="{'readonly':[('state','!=','running')]}"/>
+                                <field name="area_funcional_id" required="1" attrs="{'readonly':[('state','!=','running')]}"
+                                       options="{
+                                       'no_create': True,
+                                       'no_open': True
+                                       }"
+                                />
+                                <field name="cargos_id" required="1" attrs="{'readonly':[('state','!=','running')]}"
+                                       options="{
+                                       'no_create': True,
+                                       'no_open': True
+                                       }"
+                                />
+                            </group>
+                            <group>
+                                <field name="data_inicio" required="1" attrs="{'readonly':[('state','!=','running')]}"/>
+                                <field name="data_fim" attrs="{'readonly':[('state','!=','running')]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="selecionado_id" domain="[('id','in',curriculos_ids[0][2])]" attrs="{'readonly':[('state','!=','running')]}"
+                                   options="{
+                                   'no_create': True,
+                                   'no_open': True,
+                                   }"
+                            />
+                        </group>
+                        <group name="group_lists">
+                            <notebook>
+                                <page string="Currículos" name="Currículos">
+                                    <field name="curriculos_ids" nolabel="1" attrs="{'readonly':[('state','!=','running')]}"/>
+                                </page>
+                            </notebook>
+                        </group>
+                    </sheet>
+                    <sheet position="after">
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
 </odoo>
