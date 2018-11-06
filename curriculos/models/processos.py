@@ -100,7 +100,7 @@ class processos(models.Model):
      def concluir_processo(self):
          self.ensure_one()
          if not self.selecionado_id:
-	    raise UserError(_("Não pode concluir um processo sem um currículo selecionado!"))
+            raise UserError(_("Não pode concluir um processo sem um currículo selecionado!"))
          else:
             if not self.data_fim:
                data = fields.Date.today()

@@ -9,11 +9,13 @@
   />
 
   <!-- Menu item to open Curriculos list -->
-  <menuitem id="menu_curriculos_curriculos"
-    name="Currículos"
-    parent="menu_curriculos_cadastros"
-    action="action_curriculos_curriculos" 
-    groups="curriculos_user"
+  <menuitem
+          id="menu_curriculos_curriculos"
+          name="Currículos"
+          parent="menu_curriculos_cadastros"
+          action="action_curriculos_curriculos"
+          groups="curriculos_user"
+          sequence="-10"
   />
 
   <!-- Search for Curriculos -->
