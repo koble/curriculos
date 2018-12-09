@@ -68,7 +68,6 @@ class curriculos(models.Model):
      @api.depends('anexo')
      def _compute_conteudo_indexado(self):
          for curriculo in self:
-             import ipdb; ipdb.set_trace();
              conteudo_indexado = False
              if curriculos.anexo:
                  conteudo_indexado = False
