@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from odoo       import models, fields, api, exceptions, _
+import PyPDF2
+import tempfile
+
 
 class curriculos(models.Model):
      _name             = 'curriculos.curriculos'
@@ -13,14 +16,35 @@ class curriculos(models.Model):
      )
      email             = fields.Char(u'Email')
      endereco          = fields.Text(u'Endereço')
+     # bairro            = fields.Char(u'Bairro')
+     # cidade            = fields.Char(u'Cidade')
+     # cep               = fields.Char(u'CEP')
+     # estado            = fields.Char(u'Estado')
      telefone          = fields.Char(u'Telefone')
      celular           = fields.Char(u'Celular')
      profissoes_id     = fields.Many2one('curriculos.profissoes',
          string=u'Profissão',
      )
+     cargo_atual_id    = fields.Many2one('curriculos.cargos',
+         string=u'Cargo Atual',
+     )
+     cargo_anterior_id = fields.Many2one('curriculos.cargos',
+         string=u'Cargo Anterior',
+     )
      analise           = fields.Text()
      processos_ids     = fields.Many2many('curriculos.processos', 
          string=u'Processos Seletivos',
+     )
+     anexo = fields.Binary(
+         string='Currículo Anexo',
+     )
+     nome_anexo = fields.Char(
+         string='Currículo Anexo',
+     )
+     conteudo_indexado = fields.Text(
+         string='Conteúdo Indexado',
+         compute='_compute_conteudo_indexado',
+         store=True,
      )
      attachment_ids    = fields.Many2many(
          comodel_name='ir.attachment',
@@ -40,3 +64,13 @@ class curriculos(models.Model):
          'curriculos_ids',
          ondelete='cascade',
      )
+
+     @api.depends('anexo')
+     def _compute_conteudo_indexado(self):
+         for curriculo in self:
+             import ipdb; ipdb.set_trace();
+             conteudo_indexado = False
+             if curriculos.anexo:
+                 conteudo_indexado = False
+             curriculo.conteudo_indexado = conteudo_indexado
+

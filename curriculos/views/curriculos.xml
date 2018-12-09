@@ -27,11 +27,16 @@
         <field name="name"/>
         <field name="email"/>
         <field name="profissoes_id"/>
+        <field name="cargo_atual_id" string="Cargo" filter_domain="['|', ('cargo_atual_id.name','ilike',self), ('cargo_anterior_id.name','ilike',self)]" />
         <field name="analise"/>
-        <field name="attachment_ids" 
-            filter_domain="[('attachment_ids.index_content','ilike',self)]" 
+        <field name="anexo"
+            filter_domain="[('anexo_id.index_content','ilike',self)]"
             string="Conteúdo Indexado"
         />
+        <!--<field name="attachment_ids" -->
+            <!--filter_domain="[('attachment_ids.index_content','ilike',self)]" -->
+            <!--string="Conteúdo Indexado"-->
+        <!--/>-->
         <field name="curriculos_linguas_rel_ids"
             filter_domain="[(
                              'curriculos_linguas_rel_ids.linguas_ids',
@@ -63,7 +68,6 @@
     </field>
   </record>
 
-
   <!-- Tree View for Curriculos -->
   <record id="view_tree_curriculos_curriculos" model="ir.ui.view">
     <field name="name">Curriculos Tree View</field>
@@ -73,6 +77,8 @@
         <field name="name"/>
         <field name="profissoes_id"/>
         <field name="email"/>
+        <field name="cargo_atual_id" invisible="1" />
+        <field name="cargo_anterior_id" invisible="1" />
       </tree>
     </field>
   </record>
@@ -109,6 +115,10 @@
                              'no_open': True,
                             }"
             />
+            <field name="cargo_atual_id" options="{'no_create': True, 'no_open': True}" />
+            <field name="cargo_anterior_id" options="{'no_create': True, 'no_open': True}" />
+            <field name="anexo" filename="nome_anexo" />
+            <field name="nome_anexo" invisible="1" />
           </group>
           <group>
             <separator string="Análise"/>
@@ -116,13 +126,13 @@
           </group>
           <group name="group_lists">
             <notebook>
-              <page string="Anexos" name="Anexos">
-                <field name="attachment_ids"
-                       required="1"
-                       widget="many2many_binary"
-                       nolabel="1"
-                />
-              </page>
+              <!--<page string="Anexos" name="Anexos">-->
+                <!--<field name="attachment_ids"-->
+                       <!--required="1"-->
+                       <!--widget="many2many_binary"-->
+                       <!--nolabel="1"-->
+                <!--/>-->
+              <!--</page>-->
               <page string="Linguas" name="Linguas">
                 <field name="curriculos_linguas_rel_ids" nolabel="1">
                   <tree string="Línguas" editable="bottom">

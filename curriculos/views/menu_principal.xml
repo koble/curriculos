@@ -9,7 +9,7 @@
     />
 
     <menuitem id="menu_curriculos_cadastros"
-      name="Cadastros"
+      name="Operações"
       parent="menu_curriculos"
       groups="curriculos_user"
     />
