@@ -75,7 +75,7 @@ class curriculos(models.Model):
                  arquivo.seek(0)
                  arquivo.write(base64.b64decode(curriculo.anexo))
                  arquivo.flush()
-                 conteudo_indexado = textract.process(arquivo)
+                 conteudo_indexado = textract.process(arquivo.name)
              curriculo.conteudo_indexado = conteudo_indexado
 
      def compute_conteudo_indexado(self):
