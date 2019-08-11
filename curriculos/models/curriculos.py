@@ -73,3 +73,7 @@ class curriculos(models.Model):
              if curriculos.anexo:
                 conteudo_indexado = textract.process(curriculos.anexo)
              curriculo.conteudo_indexado = conteudo_indexado
+
+    def compute_conteudo_indexado(self):
+        self.ensure_one()
+        self._compute_conteudo_indexado()

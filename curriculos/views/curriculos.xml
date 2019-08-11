@@ -90,6 +90,7 @@
     <field name="arch" type="xml">
       <form string="Currículos">
         <header>
+          <button name="compute_conteudo_indexado" string="Indexar" type="object" />
           <!-- To add buttons and status widget -->
         </header>
         <sheet>
@@ -158,6 +159,9 @@
                 <field name="processos_ids" nolabel="1"
                        options="{'no_create': True}"
                 />
+              </page>
+              <page string="Conteúdo Indexado" name="conteudo_indexado">
+                <field name="conteudo_indexado" nolabel="1" widget="ace" />
               </page>
             </notebook>
           </group>
