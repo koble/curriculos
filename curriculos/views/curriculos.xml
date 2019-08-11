@@ -29,10 +29,7 @@
         <field name="profissoes_id"/>
         <field name="cargo_atual_id" string="Cargo" filter_domain="['|', ('cargo_atual_id.name','ilike',self), ('cargo_anterior_id.name','ilike',self)]" />
         <field name="analise"/>
-        <field name="anexo"
-            filter_domain="[('anexo_id.index_content','ilike',self)]"
-            string="Conteúdo Indexado"
-        />
+        <field name="conteudo_indexado" string="Conteúdo Indexado" />
         <!--<field name="attachment_ids" -->
             <!--filter_domain="[('attachment_ids.index_content','ilike',self)]" -->
             <!--string="Conteúdo Indexado"-->
