@@ -2,8 +2,8 @@
 
 from odoo       import models, fields, api, exceptions
 import textract
-import PyPDF2
 import tempfile
+import base64
 
 
 class curriculos(models.Model):
@@ -70,10 +70,14 @@ class curriculos(models.Model):
      def _compute_conteudo_indexado(self):
          for curriculo in self:
              conteudo_indexado = False
-             if curriculos.anexo:
-                conteudo_indexado = textract.process(curriculos.anexo)
+             if curriculo.anexo:
+                 arquivo = tempfile.NamedTemporaryFile()
+                 arquivo.seek(0)
+                 arquivo.write(base64.b64decode(curriculo.anexo))
+                 arquivo.flush()
+                 conteudo_indexado = textract.process(arquivo)
              curriculo.conteudo_indexado = conteudo_indexado
 
-    def compute_conteudo_indexado(self):
-        self.ensure_one()
-        self._compute_conteudo_indexado()
+     def compute_conteudo_indexado(self):
+         self.ensure_one()
+         self._compute_conteudo_indexado()
