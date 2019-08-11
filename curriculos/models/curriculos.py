@@ -71,7 +71,7 @@ class curriculos(models.Model):
          for curriculo in self:
              conteudo_indexado = False
              if curriculo.anexo:
-                 arquivo = tempfile.NamedTemporaryFile()
+                 arquivo = tempfile.NamedTemporaryFile(delete=False, suffix='.pdf')
                  arquivo.seek(0)
                  arquivo.write(base64.b64decode(curriculo.anexo))
                  arquivo.flush()
