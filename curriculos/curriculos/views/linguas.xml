@@ -1,0 +1,62 @@
+<odoo>
+  <data>
+   
+  <!-- Action to open Cargos list -->
+  <act_window id="action_curriculos_linguas"
+    name="Línguas"
+    res_model="curriculos.linguas"
+    view_mode="tree,form" 
+  />
+
+  <!-- Menu item to open Cargos list -->
+  <menuitem id="menu_curriculos_linguas"
+    name="Línguas"
+    parent="menu_curriculos_configuracoes"
+    action="action_curriculos_linguas" 
+    groups="curriculos_user"
+  />
+
+  <!-- Tree View for Curriculos -->
+  <record id="view_tree_curriculos_linguas" model="ir.ui.view">
+    <field name="name">Línguas Tree View</field>
+    <field name="model">curriculos.linguas</field>
+    <field name="arch" type="xml">
+      <tree string="Línguas">
+        <field name="name"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Form View for Linguas -->
+  <record id="view_form_curriculos_linguas" model="ir.ui.view">
+    <field name="name">Línguas Form View</field>
+    <field name="model">curriculos.linguas</field>
+    <field name="arch" type="xml">
+      <form string="Línguas">
+        <header>
+          <!-- To add buttons and status widget -->
+        </header>
+        <sheet>
+          <!-- To add form content -->
+          <group name="group_description">
+            <field name="name" required="1"/>
+          </group>
+          <group name="group_lists">
+            <notebook>
+              <page string="Currículos" name="Currículos">
+                <field name="linguas_curriculos_rel_ids" nolabel="1" readonly="1">
+                  <tree>
+                    <field name="curriculos_ids"/>
+                    <field name="proficiencia"/>
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  </data>
+</odoo>

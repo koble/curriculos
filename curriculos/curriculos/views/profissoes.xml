@@ -1,0 +1,62 @@
+<odoo>
+  <data>
+   
+  <!-- Action to open Profissões list -->
+  <act_window id="action_curriculos_profissoes"
+    name="Profissões"
+    res_model="curriculos.profissoes"
+    view_mode="tree,form"
+  />
+
+  <!-- Menu item to open Profissoes list -->
+  <menuitem id="menu_curriculos_profissoes"
+    name="Profissões"
+    parent="menu_curriculos_configuracoes"
+    action="action_curriculos_profissoes" 
+    groups="curriculos_user"
+  />
+
+  <!-- Tree View for Profissoes -->
+  <record id="view_tree_curriculos_profissoes" model="ir.ui.view">
+    <field name="name">Profissoes Tree View</field>
+    <field name="model">curriculos.profissoes</field>
+    <field name="arch" type="xml">
+      <tree string="Profissões">
+        <field name="name"/>
+        <field name="curriculos_ids" widget="x2many_counter"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Form View for Profissoes -->
+  <record id="view_form_curriculos_profissoes" model="ir.ui.view">
+    <field name="name">Profissoes Form View</field>
+    <field name="model">curriculos.profissoes</field>
+    <field name="arch" type="xml">
+      <form string="Profissões">
+        <header>
+          <!-- To add buttons and status widget -->
+        </header>
+        <sheet>
+          <!-- To add form content -->
+          <group name="group_description">
+            <field name="name" required="1"/>
+          </group>
+          <group name="group_lists">
+            <notebook>
+              <page string="Currículos" name="Currículos">
+                <field name="curriculos_ids" 
+                       nolabel="1" 
+                       readonly="1"
+                >
+                </field>
+              </page>
+            </notebook>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  </data>
+</odoo>

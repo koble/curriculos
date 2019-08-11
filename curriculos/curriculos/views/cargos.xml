@@ -1,0 +1,84 @@
+<odoo>
+  <data>
+   
+  <!-- Action to open Cargos list -->
+  <act_window id="action_curriculos_cargos"
+    name="Cargos"
+    res_model="curriculos.cargos"
+    view_mode="tree,form" 
+  />
+
+  <!-- Menu item to open Cargos list -->
+  <menuitem id="menu_curriculos_cargos"
+    name="Cargos"
+    parent="menu_curriculos_configuracoes"
+    action="action_curriculos_cargos" 
+    groups="curriculos_user"
+  />
+
+  <!-- Search for Cargos -->
+  <record id="search_curriculos_cargos" model="ir.ui.view">
+    <field name="name">Cargos Search</field>
+    <field name="model">curriculos.cargos</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="name"/>
+        <field name="area_funcional_id"/>
+        <filter name="group_area_funcional" string="Por Área Funcional"
+                context="{'group_by': 'area_funcional_id'}"
+        />
+      </search>
+    </field>
+  </record>
+
+  <!-- Tree View for Cargos -->
+  <record id="view_tree_curriculos_cargos" model="ir.ui.view">
+    <field name="name">Cargos Tree View</field>
+    <field name="model">curriculos.cargos</field>
+    <field name="arch" type="xml">
+      <tree string="Cargos">
+        <field name="name"/>
+        <field name="area_funcional_id"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Form View for Cargos -->
+  <record id="view_form_curriculos_cargos" model="ir.ui.view">
+    <field name="name">Cargos Form View</field>
+    <field name="model">curriculos.cargos</field>
+    <field name="arch" type="xml">
+      <form string="Cargos">
+        <header>
+          <!-- To add buttons and status widget -->
+        </header>
+        <sheet>
+          <!-- To add form content -->
+          <group name="group_description">
+            <field name="name" required="1"/>
+	    <field name="area_funcional_id" required="1"
+                   options="{'no_open': True, 'no_create': True}" />
+          </group>
+          <group name="group_lists">
+            <notebook>
+              <page string="Currículos" name="Currículos">
+                <field name="experiencias_ids" 
+                       nolabel="1" 
+                       readonly="1"
+                >
+                <tree>
+                  <field name="curriculos_ids"/>
+                  <field name="inicio"/>
+                  <field name="fim"/>
+                </tree>
+                </field>
+              </page>
+            </notebook>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  </data>
+</odoo>

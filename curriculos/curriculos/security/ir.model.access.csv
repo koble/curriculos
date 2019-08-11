@@ -1,0 +1,10 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_curriculos_curriculos_user","curriculos.curriculos.user","model_curriculos_curriculos","curriculos_user",1,1,1,1
+"access_curriculos_areas_funcionais_user","curriculos.areas_funcionais.user","model_curriculos_areas_funcionais","curriculos_user",1,1,1,1
+"access_curriculos_cargos_user","curriculos.cargos.user","model_curriculos_cargos","curriculos_user",1,1,1,1
+"access_curriculos_empresas_user","curriculos.empresas.user","model_curriculos_empresas","curriculos_user",1,1,1,1
+"access_curriculos_experiencias_user","curriculos.experiencias.user","model_curriculos_experiencias","curriculos_user",1,1,1,1
+"access_curriculos_linguas_curriculos_rel_user","curriculos.linguas_curriculos_rel.user","model_curriculos_linguas_curriculos_rel","curriculos_user",1,1,1,1
+"access_curriculos_linguas_user","curriculos.linguas.user","model_curriculos_linguas","curriculos_user",1,1,1,1
+"access_curriculos_processos_user","curriculos.processos.user","model_curriculos_processos","curriculos_user",1,1,1,1
+"access_curriculos_profissoes_user","curriculos.profissoes.user","model_curriculos_profissoes","curriculos_user",1,1,1,1

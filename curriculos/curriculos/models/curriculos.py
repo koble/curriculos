@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo       import models, fields, api, exceptions
-import textract
+from odoo       import models, fields, api, exceptions, _
 import PyPDF2
 import tempfile
 
@@ -71,5 +70,6 @@ class curriculos(models.Model):
          for curriculo in self:
              conteudo_indexado = False
              if curriculos.anexo:
-                conteudo_indexado = textract.process(curriculos.anexo)
+                 conteudo_indexado = False
              curriculo.conteudo_indexado = conteudo_indexado
+
