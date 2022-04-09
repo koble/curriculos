@@ -106,15 +106,9 @@
             </group>
           </group>
           <group>
-            <field name="profissoes_id" 
-                   required="1"
-                   options="{
-                             'no_create': True,
-                             'no_open': True,
-                            }"
-            />
-            <field name="cargo_atual_id" options="{'no_create': True, 'no_open': True}" />
-            <field name="cargo_anterior_id" options="{'no_create': True, 'no_open': True}" />
+            <field name="profissoes_id" required="1" options="{'no_quick_create': True}" />
+            <field name="cargo_atual_id" options="{'no_quick_create': True}" />
+            <field name="cargo_anterior_id" options="{'no_quick_create': True}" />
             <field name="anexo" filename="nome_anexo" />
             <field name="nome_anexo" invisible="1" />
           </group>

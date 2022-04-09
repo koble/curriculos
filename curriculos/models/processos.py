@@ -11,8 +11,8 @@ class processos(models.Model):
      _order            = 'data_inicio desc'
 
      name              = fields.Char(string=u'Processo',
-                            compute="_fill_processo",
-                            store=True,
+                            # compute="_fill_processo",
+                            # store=True,
                          )
      description       = fields.Text(string=u'Descrição')
      data_inicio       = fields.Date(string=u'Início',

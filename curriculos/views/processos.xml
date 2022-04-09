@@ -110,18 +110,14 @@
                         </group>
                         <group>
                             <group>
-                                <field name="cliente_id" required="1" attrs="{'readonly':[('state','!=','running')]}"/>
+                                <field name="cliente_id" required="1" attrs="{'readonly':[('state','!=','running')]}"
+                                       options="{'no_quick_create': True}"
+                                />
                                 <field name="area_funcional_id" required="1" attrs="{'readonly':[('state','!=','running')]}"
-                                       options="{
-                                       'no_create': True,
-                                       'no_open': True
-                                       }"
+                                       options="{'no_quick_create': True}"
                                 />
                                 <field name="cargos_id" required="1" attrs="{'readonly':[('state','!=','running')]}"
-                                       options="{
-                                       'no_create': True,
-                                       'no_open': True
-                                       }"
+                                       options="{'no_quick_create': True}"
                                 />
                             </group>
                             <group>
@@ -130,11 +126,8 @@
                             </group>
                         </group>
                         <group>
-                            <field name="selecionado_id" domain="[('id','in',curriculos_ids[0][2])]" attrs="{'readonly':[('state','!=','running')]}"
-                                   options="{
-                                   'no_create': True,
-                                   'no_open': True,
-                                   }"
+                            <field name="selecionado_id" domain="[('id','in',curriculos_ids)]" attrs="{'readonly':[('state','!=','running')]}"
+                                   options="{'no_create': True,'no_open': True,}"
                             />
                         </group>
                         <group name="group_lists">
